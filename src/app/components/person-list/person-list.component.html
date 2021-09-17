@@ -1,0 +1,36 @@
+<h3 class="mb-3">List Person</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of personList">
+      <th scope="row">{{ person.id }}</th>
+      <td>{{ person.fullname }}</td>
+      <td>{{ person.email }}</td>
+      <td>{{ person.age }}</td>
+      <td>{{ person.dni }}</td>
+      <div>
+        <td>
+          <button class="btn btn-danger" (click)="deletePerson(person.id)">
+            Delete
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-warning" [routerLink]="['/updatePerson', person.id]">
+            Edit
+          </button>
+        </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+
